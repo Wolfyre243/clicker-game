@@ -1,5 +1,5 @@
 import App from "next/app"
-import SideBar from '@/app/ui/sidebar';
+
 
 export default function mainPage() {
   return (
@@ -10,7 +10,7 @@ export default function mainPage() {
       </div>
       <div>
         <div className="p-6 max-w-96 h-96 m-5 bg-white rounded-xl flex-auto space-y-4">
-          <SideBar />
+          
         </div>
       </div>
     </main>
