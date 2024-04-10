@@ -1,8 +1,10 @@
+//Import external dependencies
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+//Import components from ui
 import SideBar from '@/app/ui/sidebar';
+import Banner from "./ui/banner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,12 +20,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
-        <div className="w-full flex-none md:w-64 ">
-          <SideBar />
+      <body>
+
+        <Banner />
+
+        <div className="flex h-screen flex-row ">
+          <div className="flex flex-col">
+            <SideBar />
+          </div>
+          <div className="flex-grow md:overflow-y-auto">{children}</div>
+          
         </div>
-        <div className={inter.className}>{children}</div>
-      </div>
+      </body>
     </html>
+    
   );
 }
